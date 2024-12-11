@@ -1,0 +1,499 @@
+.logo {
+    position: absolute;
+    width: 126px;
+    height: 34px;
+    left: 0px;
+    top: 0px;
+}
+.logo-b {
+    position: absolute;
+    width: 126px;
+    height: 34px;
+    left: 19px;
+    top: 12px;
+    background-color: white;
+    border: none;
+}
+.side{
+    /* bg */
+
+    position: absolute;
+    width: 705px;
+    height: 820px;
+    left: 735px;
+    top: 0px;
+
+    background: #F2F2F2;
+
+}
+
+
+/* bg */
+.bg {
+    position: absolute;
+    width: 705px;
+    height: 820px;
+    left: 735px;
+    top: 0px;
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    border: 0.5px solid #898989;
+}
+
+/* label */
+.label {
+    position: absolute;
+    width: 190px;
+    height: 26px;
+    left: 800px;
+    top: 464px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.9px;
+    color: #616161;
+}
+
+/* price */
+.price {
+    position: absolute;
+    width: 190px;
+    height: 26px;
+    left: 1021px;
+    top: 351px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    letter-spacing: -0.9px;
+    color: #272727;
+}
+
+/* Line 3 */
+.line-3 {
+    position: absolute;
+    width: 410px;
+    height: 0px;
+    left: 800px;
+    top: 448px;
+    border: 1px solid rgba(86, 178, 128, 0.2);
+    transform: rotate(0.14deg);
+}
+
+
+
+/* Line 2 */
+.line-2 {
+    position: absolute;
+    width: 410px;
+    height: 0px;
+    left: 800px;
+    top: 335px;
+    border: 1px solid rgba(86, 178, 128, 0.2);
+    transform: rotate(0.14deg);
+}
+
+/* coupon */
+.coupon {
+    position: absolute;
+    width: 411px;
+    height: 40px;
+    left: 800px;
+    top: 268px;
+}
+
+/* input/coupon */
+.input-coupon {
+    position: absolute;
+    left: 0%;
+    right: 30.66%;
+    top: 0%;
+    bottom: 0%;
+    background-color: #FFFFFF;
+}
+
+/* placeholder */
+.placeholder {
+    position: absolute;
+    left: 5.96%;
+    right: 30.18%;
+    top: 17.5%;
+    bottom: 17.5%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: -0.9px;
+    color: #616161;
+}
+
+/* button */
+.button {
+    position: absolute;
+    left: 71.78%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background-color: #A8A8A8;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
+/* Add code */
+.add-code {
+    position: absolute;
+    left: 14.66%;
+    right: 15.52%;
+    top: 25%;
+    bottom: 22.5%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.65px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* Line 1 */
+.line-1 {
+    position: absolute;
+    width: 410px;
+    height: 0px;
+    left: 800px;
+    top: 239px;
+    border: 1px solid rgba(86, 178, 128, 0.2);
+    transform: rotate(0.14deg);
+}
+
+/* product */
+.product {
+    position: absolute;
+    width: 475px;
+    height: 136px;
+    left: 800px;
+    top: 55px;
+}
+
+/* product-name */
+.product-name {
+    position: absolute;
+    width: 255px;
+    height: 37px;
+    left: 1020px;
+    top: 61px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.9px;
+    color: #272727;
+}
+
+/* product-image */
+.product-image {
+    position: absolute;
+    width: 160px;
+    height: 130px;
+    left: 800px;
+    top: 61px;
+    background-color: #F7F8FA;
+}
+
+/* counter */
+.counter {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 941px;
+    top: 55px;
+    background-color: #56B280;
+}
+
+/* 1 (counter-text) */
+.counter-text {
+    position: absolute;
+    left: 65.62%;
+    right: 33.4%;
+    top: 7.2%;
+    bottom: 91.1%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.left-section{
+    width: 48%;
+    padding: 57px;
+    border-radius: 5px;
+}
+.right-section {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #F2F2F2;
+
+}
+input[type="text"], input[type="email"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.right-section form input {
+    width: 70%;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+
+.info{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    /*right: 300px;*/
+    color: black;
+    background-color: black;
+}
+.shipping {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover effect for shipping container */
+.shipping:hover {
+    border-color: #87d6ac;
+}
+
+/* Radio button */
+.round-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Shipping type text */
+.typee {
+    font-size: 14px;
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Shipping price */
+.pricee {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+.con{
+
+}
+.table {
+    top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+/* Header styling */
+.table thead th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Table body styling */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Product image styling */
+.table td img {
+    max-width: 95px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.table td p {
+    display: block;
+    margin: 0;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Remove link styling */
+.table td a {
+    color: #d9534f;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
+
+/* Price and total styling */
+.table td span,
+.table td:nth-child(4),
+.table td:nth-child(2) {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .table td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+.cir{
+    /* CheckCircle */
+
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 305px;
+    top: 151px;
+
+
+}
+.h{
+    /* payment-confirmed */
+
+    position: absolute;
+    width: 349px;
+    height: 38px;
+    left: 261px;
+    top: 267px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 58px;
+    /* or 222% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.9px;
+
+    /* black */
+    color: #272727;
+
+
+}
+.stat{
+    /* description */
+
+    position: absolute;
+    width: 540px;
+    height: 51px;
+    left: 165px;
+    top: 351px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #56B280;
+
+
+}
+.back{
+    position: relative;
+    top: 399px;
+}
