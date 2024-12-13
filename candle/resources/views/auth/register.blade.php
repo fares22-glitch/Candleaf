@@ -39,7 +39,7 @@
         input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 14px;
@@ -53,6 +53,13 @@
             outline: none;
             border-color: #007bff;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        .error {
+            color: #e63946;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
         }
 
         button {
@@ -79,6 +86,18 @@
             background: #e0e0e0;
             margin: 20px 0;
         }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            text-align: center;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -87,21 +106,33 @@
     <div>
         <label for="first_name">First Name</label>
         <input name="first_name" id="first_name" type="text" value="{{ old('first_name') }}" required>
+        @error('first_name')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
     <hr>
     <div>
         <label for="last_name">Last Name</label>
         <input name="last_name" id="last_name" type="text" value="{{ old('last_name') }}" required>
+        @error('last_name')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
     <hr>
     <div>
         <label for="email">Email</label>
         <input name="email" id="email" type="email" value="{{ old('email') }}" required>
+        @error('email')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
     <hr>
     <div>
         <label for="password">Password</label>
         <input name="password" id="password" type="password" required>
+        @error('password')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
     <hr>
     <div>
