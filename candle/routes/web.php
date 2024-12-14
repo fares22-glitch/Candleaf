@@ -31,20 +31,24 @@ Route::post('/logout',[SessionController::class, 'destroy'] );
 //Product
 Route::get('/', [ProductController::class, 'fetch'])->name('product.fetch');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
-//inc/dec
-Route::post('/increment', [CartController::class,'increment'])->name('cart.increment');
-Route::post('/decrement', [CartController::class,'decrement'])->name('cart.decrement');
+//cart
 //Add
 Route::post('/add-to-cart', [CartController::class,'addToCart'])->name('cart.add');
 //Show
 Route::get('components.Cart', [CartController::class, 'showCart'])->name('cart.show');
 Route::post('components.Cart', [CartController::class, 'showCart'])->name('cart.show');
+//inc/dec in show
+Route::post('/increment', [CartController::class,'increment'])->name('cart.increment');
+Route::post('/decrement', [CartController::class,'decrement'])->name('cart.decrement');
 //Remove
 Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 //Details
 Route::get('/cart/details', [CartController::class, 'showDetails'])->name('cart.details');
 Route::post('/cart/details', [CartController::class, 'showDetails'])->name('cart.details');
 Route::post('/cart/shipping', [CartController::class, 'saveShipping'])->name('cart.shipping');
+//inc/dec in cart
+Route::post('cart/increment/{id}', [CartController::class,'pincrement'])->name('product.increment');
+Route::post('cart/decrement/{id}', [CartController::class,'pdecrement'])->name('product.decrement');
 //info
 Route::post('components.Shipping', [InformationController::class, 'store'])->name('information.store');
 Route::get('components.Shipping', [InformationController::class, 'store'])->name('information.store');
@@ -53,6 +57,8 @@ Route::post('/apply-coupon', [CouponController::class, 'applyCoupon'])->name('ap
 //method
 Route::post('/shipping/save', [MethodController::class, 'save'])->name('shipping.save');
 //pay
+Route::get('/components.Payment', function () {
+    return view('components.Payment');})->name('pay.show');
 Route::post('/components.Payment', function () {
     return view('components.Payment');})->name('pay.show');
 Route::get('/components.Shipping', function () {
@@ -60,3 +66,5 @@ Route::get('/components.Shipping', function () {
 Route::post('payment', [PaymentController::class, 'store'])->name('payment.store');
 //receipt
 Route::get('pay', [PaymentController::class, 'receipt'])->name('receipt.show');
+//destroy all
+Route::get('/delete', [PaymentController::class, 'delcart'])->name('del.cart');

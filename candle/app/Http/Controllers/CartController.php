@@ -59,6 +59,8 @@ class CartController extends Controller
             ]);
         }
 
+        $cartCount = session('cartCount', 0) + $quantity;
+        session(['cartCount' => $cartCount]);
         return redirect()->back();
     }
 
@@ -71,10 +73,11 @@ class CartController extends Controller
         return view('components.Cart',['cartItems' => $cartItems]);
     }
 
-
     public function remove($id)
     {
         $cartItem = Cart::findOrFail($id);
+        $cartCount = session('cartCount', 0) - $cartItem->quantity;
+        session(['cartCount' =>$cartCount]);
         $cartItem->delete();
 
         return redirect()->back();
@@ -89,6 +92,37 @@ class CartController extends Controller
         $subtotal = $cartItems->sum('total');
 
         return view('components.Authentication', compact('cartItems', 'subtotal'));
+    }
+    public function pincrement($id)
+    {
+        $product = Product::findOrFail($id);
+        $userId = auth()->user()->id;
+        $cartItem = Cart::where('user_id', $userId)
+            ->where('product_id', $id)
+            ->first();
+        $cartItem->quantity += 1;
+        $cartItem->total = $cartItem->quantity * $product->price;
+        $cartItem->save();
+        $cartCount = session('cartCount', 0) + 1;
+        session(['cartCount' => $cartCount]);
+        session()->put('PQ', $cartItem->quantity);
+        return redirect()->back();
+    }
+
+    public function pdecrement($id)
+    {
+        $product = Product::findOrFail($id);
+        $userId = auth()->user()->id;
+        $cartItem = Cart::where('user_id', $userId)
+            ->where('product_id', $id)
+            ->first();
+        $cartItem->quantity -= 1;
+        $cartItem->total = $cartItem->quantity * $product->price;
+        $cartItem->save();
+        $cartCount = session('cartCount', 0) - 1;
+        session(['cartCount' => $cartCount]);
+        session()->put('PQ', $cartItem->quantity);
+        return redirect()->back();
     }
 
 }

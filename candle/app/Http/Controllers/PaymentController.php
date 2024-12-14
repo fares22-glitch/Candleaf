@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\CreditCard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -55,6 +56,13 @@ class PaymentController extends Controller
     {
         session(['receipt'=>1]);
         return view('components.Message');
+    }
+    public function delcart()
+    {
+        Cart::where('user_id', auth()->id())->delete();
+        session(['cartCount' => 0]);
+        session(['shipcart' => []]);
+        return redirect()->route('product.fetch');
     }
 
 }

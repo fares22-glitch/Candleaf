@@ -28,7 +28,7 @@
             Now that your order is confirmed it will be ready to ship in 2 days.
             Please check your inbox in the future for your order updates.</p>
         <div class="back">
-        <form  action="{{ route('product.fetch') }}">
+        <form action="{{ route('del.cart') }}">
             <button type="submit">Back to shopping</button>
         </form>
 

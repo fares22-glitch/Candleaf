@@ -35,14 +35,14 @@
             @csrf
             <div>
                 <label for="card_number">Card Number</label>
-                <input type="text" id="card_number" name="card_number" placeholder="between 13 and 19 digits. Test:4111111111111111 or 5500000000000004" value="4111111111111111{{ old('card_number') }}" required>
+                <input type="text" id="card_number" name="card_number" placeholder="between 13 and 19 digits. ex:4111111111111111 or 5500000000000004"{{ old('card_number') }}" required>
                 @error('card_number')
                 <span class="text-danger" style="color: red;">{{ $message }}</span>
                 @enderror
             </div>
             <div>
                 <label for="holder_name">Card Name</label>
-                <input type="text" id="holder_name" name="holder_name" placeholder="at least 3 characters. Test:fares or ahmed" value="fares{{ old('holder_name') }}" required>
+                <input type="text" id="holder_name" name="holder_name" placeholder="at least 3 characters. ex:fares or ahmed"{{ old('holder_name') }}" required>
                 @error('holder_name')
                 <span class="text-danger" style="color: red;">{{ $message }}</span>
                 @enderror
@@ -50,7 +50,7 @@
 
             <div>
                 <label for="expiration">Expiration (MM/YY)</label>
-                <input type="text" id="expiration" name="expiration" placeholder="MM/YY format. Test:12/25" value="12/25{{ old('expiration') }}" required>
+                <input type="text" id="expiration" name="expiration" placeholder="MM/YY format. ex:12/25"{{ old('expiration') }}" required>
                 @error('expiration')
                 <span class="text-danger" style="color: red;">{{ $message }}</span>
                 @enderror
@@ -58,7 +58,7 @@
 
             <div>
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="3 or 4 digits. Test:123" value="123{{ old('cvv') }}" required>
+                <input type="text" id="cvv" name="cvv" placeholder="3 or 4 digits. ex:123"{{ old('cvv') }}" required>
                 @error('cvv')
                 <span class="text-danger" style="color: red;">{{ $message }}</span>
                 @enderror

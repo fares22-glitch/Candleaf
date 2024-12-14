@@ -10,11 +10,13 @@
     <style ></style>
 </head>
 <body>
-<?php session(['selected' => 0]); ?>
-<?php session(['shipping_method' =>0]);?>
-<?php session(['NewT' => 0]); ?>
-<?php session(['coupon_code'=> 0]);?>
-<?php session(['aftermethod' =>0]); ?>
+<?php
+session(['selected' => 0]);
+session(['shipping_method' =>0]);
+session(['NewT' => 0]);
+session(['coupon_code'=> 0]);
+session(['aftermethod' =>0]);
+?>
 <header class="heading">
 <div class="nav-desktop">
     <div>
@@ -42,6 +44,9 @@
                 @csrf
                 <button class="but-c" type="submit">
                     <img class="cart" src="{{ asset('images/Cart.png') }}" alt="Cart">
+                    @if(session('cartCount') > 0)
+                        <span class="cart-badge">{{ session('cartCount')}}</span>
+                    @endif
                 </button>
             </form>
         @endauth

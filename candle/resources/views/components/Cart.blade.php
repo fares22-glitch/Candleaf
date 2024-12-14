@@ -11,6 +11,54 @@ use App\Models\Cart;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cart</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<style>
+    .product-image-container {
+        position: relative;
+        display: inline-block;
+    }
+    .product-image-container img {
+        width: 150px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quantity-control {
+        position: absolute;
+        top: 53px;
+        right: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50px;
+    }
+    .quantity-control button {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 50%;
+    }
+    .quantity-control button:hover {
+        background-color: #f1f1f1;
+    }
+
+    .quantity-control button:disabled {
+        background-color: #e0e0e0;
+        cursor: not-allowed;
+    }
+    .quantity-control .Q {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
 </head>
 <body>
 <header class="heading">
@@ -36,8 +84,10 @@ use App\Models\Cart;
         </button>
         <button class="but-c">
             <img class="cart"  src="{{ asset('images/Cart.png') }}" alt="Example Image">
-        </button>
-
+                @if(session('cartCount') > 0)
+                    <span class="cart-badge">{{ session('cartCount')}}</span>
+                @endif
+            </button>
         <div >
             @guest
                 <button
@@ -85,9 +135,24 @@ use App\Models\Cart;
             @foreach($cartItems as $item)
                 <tr>
                     <td>
+                        <div class="product-image-container">
                         <img  src="{{ asset($item->product->image) }}" alt="{{ $item->product->name }} ">
+                        <div class="quantity-control">
+
+                            <form action="{{ route('product.increment', $item->product_id)  }}" method="POST">
+                                @csrf
+                                <button class="inc" type="submit">+</button>
+                            </form>
+                            <h2 class="Q">{{ $item->quantity }}</h2>
+                            <form action="{{ route('product.decrement', $item->product_id)  }}" method="POST">
+                                @csrf
+                                <button class="dec" type="submit" @if(session('PQ', 1) <= 1) disabled @endif>-</button>
+                            </form>
+                        </div>
+                        </div>
                         <p>{{ $item->product->name }}</p>
                         <a href="{{ route('cart.remove', $item->id) }}">Remove</a>
+
                     </td>
                     <td>${{ number_format($item->product->price, 2) }}</td>
                     <td>

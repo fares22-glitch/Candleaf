@@ -20,30 +20,5 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         return view('components.Show', compact('product'));
     }
-
-    public function addToCart(Request $request)
-    {
-        $product = Product::findOrFail($request->product_id);
-        $quantity = $request->quantity;
-
-        $cartItem = Cart::where('user_id', auth()->id())
-            ->where('product_id', $product->id)
-            ->first();
-
-        if ($cartItem) {
-            $cartItem->quantity += $quantity;
-            $cartItem->total = $cartItem->quantity * $product->price;
-            $cartItem->save();
-
-        } else {
-            Cart::create([
-                'user_id' => auth()->id(),
-                'product_id' => $product->id,
-                'quantity' => $quantity,
-                'total' => $product->price * $quantity,
-            ]);
-        }
-        return view('components.Show', compact('product', 'cartItem'));
-    }
 }
 

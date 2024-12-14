@@ -107,8 +107,11 @@ App\Http\Controllers\InformationController::class;
         @if(session('coupon_code'))
                 <p>Coupon Applied: {{ session('coupon_code') }}</p>
                 <p>Discount: ${{ number_format(session('discount', 0), 2) }}</p>
-                    <?php session(['NewT' => $subtotal -  (number_format(session('discount', 0), 2))]); ?>
-                <p>Total after Discount: ${{$subtotal -  (number_format(session('discount', 0), 2))}}</p>
+                    <?php
+                    $discountedTotal = $subtotal - (number_format(session('discount', 0), 2));
+                    session(['NewT' => max($discountedTotal, 0)]);
+                    ?>
+                <p>Total after Discount: ${{ max($discountedTotal, 0) }}</p>
             @else
                 <p>Total: ${{ number_format($subtotal, 2) }}</p>
                     <?php session(['NewT' => $subtotal] ); ?>

@@ -36,6 +36,9 @@
                     @csrf
                     <button class="but-c" type="submit">
                         <img class="cart" src="{{ asset('images/Cart.png') }}" alt="Cart">
+                        @if(session('cartCount') > 0)
+                            <span class="cart-badge">{{ session('cartCount')}}</span>
+                        @endif
                     </button>
                 </form>
             @endauth
