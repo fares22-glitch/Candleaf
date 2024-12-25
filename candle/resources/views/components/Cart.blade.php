@@ -146,7 +146,7 @@ use App\Models\Cart;
                             <h2 class="Q">{{ $item->quantity }}</h2>
                             <form action="{{ route('product.decrement', $item->product_id)  }}" method="POST">
                                 @csrf
-                                <button class="dec" type="submit" @if(session('PQ', 1) <= 1) disabled @endif>-</button>
+                                <button class="dec" type="submit" @if($item->quantity <= 1) disabled @endif>-</button>
                             </form>
                         </div>
                         </div>

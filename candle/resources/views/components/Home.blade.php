@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php
+session(['Q' => 1]);
 session(['selected' => 0]);
 session(['shipping_method' =>0]);
 session(['NewT' => 0]);
